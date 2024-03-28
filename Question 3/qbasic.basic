@@ -1,0 +1,59 @@
+REM Program to perform basic arithmetic operations
+
+CLS
+
+' Function to add two numbers
+FUNCTION add(a AS INTEGER, b AS INTEGER)
+    add = a + b
+END FUNCTION
+
+' Function to subtract two numbers
+FUNCTION subtract(a AS INTEGER, b AS INTEGER)
+    subtract = a - b
+END FUNCTION
+
+' Function to multiply two numbers
+FUNCTION multiply(a AS INTEGER, b AS INTEGER)
+    multiply = a * b
+END FUNCTION
+
+' Function to divide two numbers
+FUNCTION divide(a AS INTEGER, b AS INTEGER)
+    IF b <> 0 THEN
+        divide = a / b
+    ELSE
+        divide = 0 ' Handle division by zero case
+    END IF
+END FUNCTION
+
+' Function to calculate modulus with 10 added
+FUNCTION modulusCalc10(a AS INTEGER, b AS INTEGER)
+    modulusCalc10 = (a MOD b) + 10
+END FUNCTION
+
+' Function to compare two numbers and return the greatest
+FUNCTION compare(a AS INTEGER, b AS INTEGER)
+    IF a > b THEN
+        compare = a
+    ELSEIF b > a THEN
+        compare = b
+    ELSE
+        compare = 0 ' Numbers are equal
+    END IF
+END FUNCTION
+
+DIM a, b, c AS INTEGER
+
+INPUT "Enter two numbers: "; a, b
+c = subtract(a, b)
+
+PRINT "Addition of "; a; " and "; b; " is "; add(a, b)
+PRINT "Subtraction of "; a; " and "; b; " is "; c
+PRINT "Multiplication of "; a; " and "; b; " is "; multiply(a, b)
+PRINT "Division of "; a; " and "; b; " is "; divide(a, b)
+PRINT "Modulus of "; a; " and "; b; " is "; modulusCalc10(a, b)
+PRINT "Comparison of "; a; " and "; b; " "; compare(a, b); " is the greatest"
+
+IF compare(a, b) = 0 THEN
+    PRINT "The numbers are equal"
+END IF
